@@ -125,6 +125,7 @@ public class home extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Show Admin");
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 255));
         jButton1.setText("NextPage");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

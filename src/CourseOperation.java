@@ -26,7 +26,7 @@ public class CourseOperation extends javax.swing.JFrame {
     ResultSet rs=null;
     public CourseOperation() {
 
-        super("Login");
+        super("Fin Course");
         initComponents();
         conn = databaseConnection.connection();
     }
@@ -52,7 +52,7 @@ public class CourseOperation extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         description = new javax.swing.JTextArea();
         duration = new javax.swing.JTextField();
-        credits = new javax.swing.JTextField();
+        department = new javax.swing.JTextField();
         teacher = new javax.swing.JTextField();
         UpdateButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
@@ -63,6 +63,8 @@ public class CourseOperation extends javax.swing.JFrame {
         ID = new javax.swing.JLabel();
         tim1 = new javax.swing.JLabel();
         time = new javax.swing.JTextField();
+        Credit1 = new javax.swing.JLabel();
+        credits = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -150,6 +152,10 @@ public class CourseOperation extends javax.swing.JFrame {
         tim1.setForeground(new java.awt.Color(255, 255, 255));
         tim1.setText("Teacher");
 
+        Credit1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Credit1.setForeground(new java.awt.Color(255, 255, 255));
+        Credit1.setText("Department");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,57 +167,48 @@ public class CourseOperation extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Days)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(75, 75, 75)
-                                        .addComponent(UpdateButton)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(deleteButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(backButton)))
-                                .addGap(0, 99, Short.MAX_VALUE))
+                                .addComponent(Days)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(UpdateButton)
+                                .addGap(27, 27, 27)
+                                .addComponent(deleteButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(backButton))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(Description)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(teacher, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(26, 26, 26))
+                                    .addComponent(teacher, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 125, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(name)
-                                                .addComponent(ID))
-                                            .addGap(53, 53, 53))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(DUration)
-                                            .addGap(32, 32, 32))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(Credit, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(tim, javax.swing.GroupLayout.Alignment.LEADING))
-                                            .addGap(12, 12, 12)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tim1)
-                                        .addGap(44, 44, 44)))
+                                        .addGap(44, 44, 44))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(name)
+                                            .addComponent(ID)
+                                            .addComponent(Credit)
+                                            .addComponent(Credit1)
+                                            .addComponent(DUration)
+                                            .addComponent(tim))
+                                        .addGap(9, 9, 9)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(id)
                                     .addComponent(courseName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                     .addComponent(duration)
-                                    .addComponent(credits))))
+                                    .addComponent(credits)))
+                            .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(searchButton)
                         .addGap(45, 45, 45))))
@@ -228,25 +225,31 @@ public class CourseOperation extends javax.swing.JFrame {
                     .addComponent(name)
                     .addComponent(courseName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchButton))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Days))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Days)
-                            .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DUration))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(credits, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Credit))
-                        .addGap(45, 45, 45)
-                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addGap(23, 23, 23)))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DUration))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Credit)
+                    .addComponent(credits, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Credit1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
@@ -258,7 +261,7 @@ public class CourseOperation extends javax.swing.JFrame {
                             .addComponent(teacher, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43)
                         .addComponent(Description)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UpdateButton)
                     .addComponent(backButton)
@@ -285,20 +288,23 @@ public class CourseOperation extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             stmt = conn.createStatement();
+            int CId = Integer.parseInt(id.getText());
             String name=courseName.getText();
             String Days= day.getText();
             String dur=duration.getText();
             int cred=Integer.parseInt(credits.getText());
-            String tim=teacher.getText();
+            String tim=time.getText();
             String descrip=description.getText();
             String Teach=teacher.getText();
+            String depart=department.getText();
 
-            String sql="INSERT INTO COURSE(name,description,duration,credits,timing,days,teacher) VALUES('"+name+"','"+descrip+"','"+dur+"','"+cred+"','"+tim+"','"+Days+"','"+Teach+"')";
+            String sql = "UPDATE COURSE SET name='"+name+"', description='"+descrip+"',duration='"+dur+"',credits='"+cred+"',timing='"+tim+"',days='"+Days+"',teacher='"+Teach+"',departments='"+depart+"' WHERE courseId='"+CId+"'";
+
             stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Data is successfully inserted");
-        }catch(HeadlessException | NumberFormatException | SQLException e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Data is successfully updated");
 
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
@@ -328,6 +334,7 @@ public class CourseOperation extends javax.swing.JFrame {
                     time.setText(rs.getString("timing"));
                     teacher.setText(rs.getString("teacher"));
                     description.setText(rs.getString("description"));
+                    department.setText(rs.getString("departments"));
                     
                 }else{
                     JOptionPane.showMessageDialog(null, "Record Not Found");
@@ -403,6 +410,7 @@ public class CourseOperation extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Credit;
+    private javax.swing.JLabel Credit1;
     private javax.swing.JLabel DUration;
     private javax.swing.JLabel Days;
     private javax.swing.JLabel Description;
@@ -413,6 +421,7 @@ public class CourseOperation extends javax.swing.JFrame {
     private javax.swing.JTextField credits;
     private javax.swing.JTextField day;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JTextField department;
     private javax.swing.JTextArea description;
     private javax.swing.JTextField duration;
     private javax.swing.JTextField id;
